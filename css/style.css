@@ -9,6 +9,7 @@
 body{
   padding: 0 20px;
   overflow-x: hidden;
+  height: 100%;
 }
 
 h1{
@@ -65,7 +66,7 @@ h4{
 
 h5{
   font-size: 22px;
-  margin: 40px 0 25px 60px;
+  margin: 40px 0 5px 60px;
   position: relative;
   min-height: 50px;
 }
@@ -110,7 +111,15 @@ h5.skills{
 h5.live{
   color: #C10000;
 }
-
+h5.technical{
+  color: #9B38FF;
+}
+h5.speak{
+  color: #26963F;
+}
+h5.tower{
+  color: #2E95E0;
+}
 
 
 .item{
@@ -179,7 +188,7 @@ li span{
   color: rgb(197, 6, 6);
 }
 
-span[name=var(name_active)]{
+span.name_active{
   background-color: rgb(197, 6, 6);
   color: white;
   padding: 6px;
@@ -196,6 +205,8 @@ span[name=var(name_active)]{
   width: 40px;
   z-index: 20;
   opacity: 0.8;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .next{
@@ -207,9 +218,7 @@ span[name=var(name_active)]{
   left: 0;
 }
 
-.button_none{
-  display: none;
-}
+
 
 ._hideRight{
   opacity: 0;
@@ -222,4 +231,51 @@ span[name=var(name_active)]{
   visibility: hidden;
   transform: translateX(-100%);
   transition: all 0.5s;
+}
+
+.name-list{
+  background-color: white;
+  box-shadow: 0 4px 42px 0px rgba(0, 0, 0, 0.192);
+  position: fixed;
+  z-index: 300;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  text-align: center;
+  padding: 32px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 60vh;
+  width: 100vw;
+  max-width: 320px;
+}
+
+.name-list h6{
+  font-size: 20px;
+  margin-bottom: 0;
+
+}
+
+.name-list ul{
+  flex-grow: 1;
+  overflow-y: auto;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.name-list li{
+  border: none;
+  padding: 6px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: white;
+}
+
+
+
+.display_none{
+  display: none;
 }

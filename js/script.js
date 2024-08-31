@@ -1,4 +1,5 @@
 const store = [
+  //2—8 сентября
   {
     weekDate: '2—8 сентября',// неделя от
 
@@ -17,7 +18,7 @@ const store = [
         prayer: 'Виталий В.',//Молитва:
         speechTitle: '1. Пусть вами движет любовь к прославленному имени Бога',//СОКРОВИЩА название
         speech: 'Артур Ф.',//СОКРОВИЩА докладчик
-        pearl: 'Василий М.',// Духовные жемчужины
+        pearl: 'Андрей П',// Духовные жемчужины
         reading: 'Магомед М.',//Чтение Библии
       },
 
@@ -48,12 +49,12 @@ const store = [
         {
           title: '8. «Они будут свято чтить моё имя»',//
           description: '(15 мин.). Обсуждение.',//
-          name: 'Евгений Л.',//
+          name: 'Василий М.',//
         },
         {
           title: '9. Изучение Библии в собрании',
           description: '(30 мин.)',
-          name: 'A. Зиганшин / А. Погорельский',
+          name: 'A. Зиганшин / Андрей П.',
         },
       ],
       finalWords: 'Виталий В.',//Заключительные слова
@@ -73,7 +74,7 @@ const store = [
         chairman: 'Артур Ф.',//Председатель:
         prayer: 'Артур Ф.',//Молитва:
         speech: 'Алексей З.',//Речь докладчик
-        speechTitle: ''//Речь название
+        speechTitle: 'Велекодушно прошайте друг друга'//Речь название
       },
 
       watchtower: {//Изучение "Сторожевой башни"
@@ -84,83 +85,83 @@ const store = [
       prayer: 'Алексей З.',//Молитва:
     },
   },
-
+  //9—15 сентября
   {
-    weekDate: '9—15 сентября',// неделя от
+    weekDate: '9—15 сентября', // неделя от
 
     weekdays: {
-      date: 'Четверг 12 сентября',//день недели
+      date: 'Четверг 12 сентября', // день недели
 
       technical: {
-        scene: 'Александр М.',//Микрофон трибуна:
-        audioVideo: { main: 'Алексей З.', helper: 'Василий М.' },//Аудио и видео:
-        manager: 'Виталий В.',//Распоредитель:
-        microphone: 'Геворг Г.',//Микрофоны:
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Алексей З.', helper: 'Гастон Н.' }, // Аудио и видео:
+        manager: 'Артур Ф.', // Распорядитель:
+        microphone: 'Геворг Г.', // Микрофоны:
       },
 
       treasures: {
-        chairman: 'Артур Ф.',//Председатель:
-        prayer: 'Артур Ф.',//Молитва:
-        speechTitle: '1. Цените свои задания в служении Иегове',//СОКРОВИЩА название
-        speech: 'Евгений Л.',//СОКРОВИЩА докладчик
-        pearl: 'Андрей П.',// Духовные жемчужины
-        reading: 'Александр М.',//Чтение Библии
+        chairman: 'Василий М.', // Председатель:
+        prayer: 'Василий М.', // Молитва:
+        speechTitle: '1. Цените свои задания в служении Иегове', // СОКРОВИЩА название
+        speech: 'Евгений Л.', // СОКРОВИЩА докладчик
+        pearl: 'Артур Ф.', // Духовные жемчужины
+        reading: 'Александр М.', // Чтение Библии
       },
 
-      skills: [//ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ
+      skills: [
         {
-          title: '4. Сочувствие. Как действовал Иисус',//
-          description: '(7 мин.) Обсуждение. ',//
-          name: 'Василий М.',//
+          title: '4. Сочувствие. Как действовал Иисус', // Название
+          description: '(7 мин.) Обсуждение.', // Описание
+          name: 'Алексей З.', // Имя
         },
         {
           title: '5. Сочувствие. Берите пример с Иисуса',
-          description: '(8 мин.) Обсуждение',
-          name: 'Алексей З.',
+          description: '(8 мин.) Обсуждение.',
+          name: 'Андрей П.',
         },
       ],
 
-      live: [//ХРИСТИАНСКАЯ ЖИЗНЬ
+      live: [
         {
-          title: '6. Местные потребности',//
-          description: '(15 мин.)',//
-          name: '-',//
+          title: '6. Местные потребности', // Название
+          description: '(15 мин.)', // Описание
+          name: '?', // Имя
         },
         {
-          title: '9. Изучение Библии в собрании',
-          description: '(30 мин.)',
-          name: 'Виталий В. / Василий М.',
+          title: '7. Изучение Библии в собрании',
+          description: '(30 мин.) bt гл. 15, абз. 8—12, рамка на с. 118',
+          name: 'Виталий В. / Алексей З.', // Имя
         },
       ],
-      finalWords: 'Артур Ф.',//Заключительные слова
-      prayer: 'Андрей П.',//Молитва
+      finalWords: 'Василий М.', // Заключительные слова
+      prayer: 'Алексей З.', // Молитва
     },
+    dayOff: { // выходной день
+      date: 'Суббота 14 сентября', // дата
 
-    dayOff: {//выходной день
-      date: 'Суббота 14 сентября',//дата
-
-      technical: {//ТЕХНИЧЕСКАЯ СЛУЖБА
-        scene: 'Александр М.',//Микрофон трибуна:
-        audioVideo: { main: 'Виталий В.', helper: 'Гастон Н.' },//Аудио и видео:
-        manager: 'Алексей З.',//Распоредитель:
-        microphone: 'Андрей П.',//Микрофоны:
+      technical: { // ТЕХНИЧЕСКАЯ СЛУЖБА
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Василий М.', helper: 'Геворг Г.' }, // Аудио и видео:
+        manager: 'Артур Ф.', // Распорядитель:
+        microphone: 'Гастон Н.', // Микрофоны:
       },
 
-      publicMeeting: {//Публичная речь
-        chairman: 'Василий М.',//Председатель:
-        prayer: 'Василий М.',//Молитва:
-        speech: 'Стрим',//Речь докладчик
-        speechTitle: '-'//Речь название
+      publicMeeting: { // Публичная речь
+        chairman: 'Алексей З.', // Председатель:
+        prayer: 'Алексей З.', // Молитва:
+        speech: '?', // Речь докладчик
+        speechTitle: '?', // Речь название
       },
 
-      watchtower: {//Изучение "Сторожевой башни"
-        leading: 'Евгений Л.',//Ведущий:
-        reading: 'Алексей З.',//Чтец:
+      watchtower: { // Изучение "Сторожевой башни"
+        leading: 'Евгений Л.', // Ведущий:
+        reading: 'Андрей П.', // Чтец:
       },
-
-      prayer: 'Алексей З.',//Молитва:
+      prayer: 'Андрей П.', // Молитва:
     },
   },
+  //16—22 сентября
+
 
 
 ];
@@ -353,30 +354,64 @@ function render(weekNumber) {
   main.appendChild(section);
 }
 
-let weekActiv = 0
-render(0);
-
-
-
-
 
 const navButtonNext = document.querySelector('.nav-buttons .next');
 const navButtonPrev = document.querySelector('.nav-buttons .prev');
+function navButtonsChengeAhow() {
+  if (weekActiv > 0) {
+    navButtonPrev.classList.remove('button_none');
+  }
+  if (weekActiv == (store.length - 1)) {
+    navButtonNext.classList.add('button_none');
+  }
+  if (weekActiv == 0) {
+    navButtonPrev.classList.add('button_none');
+  }
+  if (weekActiv < (store.length - 1)) {
+    navButtonNext.classList.remove('button_none');
+  }
+}
+
+function getWeekNumber(date) {
+  // Копируем дату, чтобы избежать изменения оригинального объекта
+  const dateCopy = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+
+  // Определяем, что неделя начинается с понедельника
+  const dayOfWeek = dateCopy.getUTCDay() || 7;
+  dateCopy.setUTCDate(dateCopy.getUTCDate() + 4 - dayOfWeek);
+
+  const startOfYear = new Date(Date.UTC(dateCopy.getUTCFullYear(), 0, 1));
+
+  // Вычисляем номер недели
+  const weekNumber = Math.ceil((((dateCopy - startOfYear) / 86400000) + 1) / 7);
+
+  return weekNumber;
+}
+const visitWeekNumber = getWeekNumber(new Date());
+const firstWeekNumber = 36;//Номер первой недели месяца, изменять каждый месяц
+let weekActiv = 0
+if ((visitWeekNumber - firstWeekNumber) > -1 && (visitWeekNumber - firstWeekNumber) < store.length) {
+  weekActiv = visitWeekNumber - firstWeekNumber
+  navButtonsChengeAhow()
+}
+render(weekActiv);
+
 
 navButtonNext.onclick = function () {
   weekActiv++;
   main.classList.add('_hideLeft');
+  navButtonPrev.classList.add('_hideLeft');
+  navButtonNext.classList.add('_hideRight');
   setTimeout(() => {
     render(weekActiv);
-    if (weekActiv > 0) {
-      navButtonPrev.classList.remove('button_none');
-    }
-    if (weekActiv == (store.length - 1)) {
-      navButtonNext.classList.add('button_none');
-    }
+    navButtonsChengeAhow()
     window.scrollTo({
       top: 0,
     });
+    setTimeout(() => {
+      navButtonPrev.classList.remove('_hideLeft');
+      navButtonNext.classList.remove('_hideRight');
+    }, 500);
     main.classList.remove('_hideLeft');
   }, 600);
 
@@ -385,17 +420,37 @@ navButtonNext.onclick = function () {
 navButtonPrev.onclick = function () {
   weekActiv--;
   main.classList.add('_hideRight');
+  navButtonPrev.classList.add('_hideLeft');
+  navButtonNext.classList.add('_hideRight');
   setTimeout(() => {
     render(weekActiv);
-    if (weekActiv == 0) {
-      navButtonPrev.classList.add('button_none');
-    }
-    if (weekActiv < (store.length - 1)) {
-      navButtonNext.classList.remove('button_none');
-    }
+    navButtonsChengeAhow()
     window.scrollTo({
       top: 0,
     });
+    setTimeout(() => {
+      navButtonPrev.classList.remove('_hideLeft');
+      navButtonNext.classList.remove('_hideRight');
+    }, 500);
     main.classList.remove('_hideRight');
   }, 600);
 }
+
+const nameListLi = document.querySelectorAll('.name-list li');
+nameListLi.forEach(span => {
+  span.onclick = function(){
+    const name = span.innerText;
+  const spanNameList = document.querySelectorAll(`span[name="${name}"]`);
+
+  const spanWithName = document.querySelectorAll('span[name]');
+  spanWithName.forEach(span => {
+    span.classList.remove('name_active')
+  })
+
+  spanNameList.forEach(span => {
+    span.classList.add('name_active')
+  });
+
+  document.querySelector('.name-list').classList.add('display_none');
+  }
+})
