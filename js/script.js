@@ -1,3 +1,90 @@
+//16—22 сентября
+// {
+//   weekDate: '16—22 сентября', // неделя от
+
+//   weekdays: {
+//     date: 'Четверг - сентября', // день недели
+
+//     technical: {
+//       scene: 'Александр М.', // Микрофон трибуна:
+//       audioVideo: { main: '=.', helper: '=' }, // Аудио и видео:
+//       manager: '=', // Распоредитель:
+//       microphone: '=', // Микрофоны:
+//     },
+
+//     treasures: {
+//       chairman: '=', // Председатель:
+//       prayer: '=', // Молитва:
+//       speechTitle: '=', // СОКРОВИЩА название
+//       speech: '=', // СОКРОВИЩА докладчик
+//       pearl: '=', // Духовные жемчужины
+//       reading: '=', // Чтение Библии
+//     },
+
+//     skills: [ // ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ
+//       {
+//         title: '=', //
+//         description: '=', //
+//         name: '?', //
+//       },
+//       {
+//         title: '=', //
+//         description: '=', //
+//         name: '?', //
+//       },
+//       {
+//         title: '=', //
+//         description: '=', //
+//         name: '?', //
+//       },
+//     ],
+
+//     live: [ // ХРИСТИАНСКАЯ ЖИЗНЬ
+//       {
+//         title: '=', //
+//         description: '=', //
+//         name: '=', //
+//       },
+//       {
+//         title: '=', //
+//         description: '=', //
+//         name: '=', //
+//       },
+//       {
+//         title: '=. Изучение Библии в собрании', //
+//         description: '(30 мин.)', //
+//         name: '=. / =', //
+//       },
+//     ],
+//     finalWords: '=', // Заключительные слова
+//     prayer: '=', // Молитва
+//   },
+//   dayOff: { // выходной день
+//     date: 'Суббота = сентября', // дата
+
+//     technical: { // ТЕХНИЧЕСКАЯ СЛУЖБА
+//       scene: 'Александр М.', // Микрофон трибуна:
+//       audioVideo: { main: '=', helper: '=' }, // Аудио и видео:
+//       manager: '=.', // Распоредитель:
+//       microphone: '=', // Микрофоны:
+//     },
+
+//     publicMeeting: { // Публичная речь
+//       chairman: '=', // Председатель:
+//       prayer: '=', // Молитва:
+//       speech: '?', // Речь докладчик
+//       speechTitle: '?', // Речь название
+//     },
+
+//     watchtower: { // Изучение "Сторожевой башни"
+//       leading: 'Евгений Л.', // Ведущий:
+//       reading: '=.', // Чтец:
+//     },
+
+//     prayer: '=', // Молитва:
+//   },
+// }
+
 const store = [
   //2—8 сентября
   {
@@ -9,7 +96,7 @@ const store = [
       technical: {
         scene: 'Александр М.',//Микрофон трибуна:
         audioVideo: { main: 'Василий М.', helper: 'Геворг Г.' },//Аудио и видео:
-        manager: 'Евгений Л.',//Распоредитель:
+        manager: 'Алексей З.',//Распоредитель:
         microphone: 'Гастон Н.',//Микрофоны:
       },
 
@@ -85,6 +172,7 @@ const store = [
       prayer: 'Алексей З.',//Молитва:
     },
   },
+
   //9—15 сентября
   {
     weekDate: '9—15 сентября', // неделя от
@@ -95,7 +183,7 @@ const store = [
       technical: {
         scene: 'Александр М.', // Микрофон трибуна:
         audioVideo: { main: 'Алексей З.', helper: 'Гастон Н.' }, // Аудио и видео:
-        manager: 'Артур Ф.', // Распорядитель:
+        manager: 'Артур Ф.', // Распоредитель:
         microphone: 'Геворг Г.', // Микрофоны:
       },
 
@@ -108,29 +196,29 @@ const store = [
         reading: 'Александр М.', // Чтение Библии
       },
 
-      skills: [
+      skills: [ // ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ
         {
-          title: '4. Сочувствие. Как действовал Иисус', // Название
-          description: '(7 мин.) Обсуждение.', // Описание
-          name: 'Алексей З.', // Имя
+          title: '4. Сочувствие. Как действовал Иисус', //
+          description: '(7 мин.) Обсуждение.', //
+          name: 'Алексей З.', //
         },
         {
-          title: '5. Сочувствие. Берите пример с Иисуса',
-          description: '(8 мин.) Обсуждение.',
-          name: 'Андрей П.',
+          title: '5. Сочувствие. Берите пример с Иисуса', //
+          description: '(8 мин.) Обсуждение.', //
+          name: 'Андрей П.', //
         },
       ],
 
-      live: [
+      live: [ // ХРИСТИАНСКАЯ ЖИЗНЬ
         {
-          title: '6. Местные потребности', // Название
-          description: '(15 мин.)', // Описание
-          name: '?', // Имя
+          title: '6. Местные потребности', //
+          description: '(15 мин.)', //
+          name: '', //
         },
         {
-          title: '7. Изучение Библии в собрании',
-          description: '(30 мин.) bt гл. 15, абз. 8—12, рамка на с. 118',
-          name: 'Виталий В. / Алексей З.', // Имя
+          title: '7. Изучение Библии в собрании', //
+          description: '(30 мин.)', //
+          name: 'Виталий В. / Алексей З.', //
         },
       ],
       finalWords: 'Василий М.', // Заключительные слова
@@ -141,14 +229,101 @@ const store = [
 
       technical: { // ТЕХНИЧЕСКАЯ СЛУЖБА
         scene: 'Александр М.', // Микрофон трибуна:
-        audioVideo: { main: 'Василий М.', helper: 'Геворг Г.' }, // Аудио и видео:
-        manager: 'Артур Ф.', // Распорядитель:
-        microphone: 'Гастон Н.', // Микрофоны:
+        audioVideo: { main: 'Гастон Н.', helper: 'Василий М.' }, // Аудио и видео:
+        manager: 'Артур Ф.', // Распоредитель:
+        microphone: 'Андрей П.', // Микрофоны:
       },
 
       publicMeeting: { // Публичная речь
         chairman: 'Алексей З.', // Председатель:
         prayer: 'Алексей З.', // Молитва:
+        speech: '', // Речь докладчик
+        speechTitle: '', // Речь название
+      },
+
+      watchtower: { // Изучение "Сторожевой башни"
+        leading: 'Евгений Л.', // Ведущий:
+        reading: 'Виталий В.', // Чтец:
+      },
+
+      prayer: 'Виталий В.', // Молитва:
+    },
+  },
+
+  //16—22 сентября
+  {
+    weekDate: '16—22 сентября', // неделя от
+
+    weekdays: {
+      date: 'Четверг 19 сентября', // день недели
+
+      technical: {
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Виталий В.', helper: 'Андрей П.' }, // Аудио и видео:
+        manager: 'Алексей З.', // Распоредитель:
+        microphone: 'Гастон Н.', // Микрофоны:
+      },
+
+      treasures: {
+        chairman: 'Артур Ф.', // Председатель:
+        prayer: 'Артур Ф', // Молитва:
+        speechTitle: '1. Молитва помогает нам переносить трудности', // СОКРОВИЩА название
+        speech: 'Алексей З.', // СОКРОВИЩА докладчик
+        pearl: 'Евгений Л.', // Духовные жемчужины
+        reading: 'Гастон Н.', // Чтение Библии
+      },
+
+      skills: [ // ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ
+        {
+          title: '4. Начинайте разговор', //
+          description: '(3 мин.) НЕФОРМАЛЬНОЕ СЛУЖЕНИЕ.', //
+          name: '?', //
+        },
+        {
+          title: '5. Развивайте интерес', //
+          description: '(4 мин.) НЕФОРМАЛЬНОЕ СЛУЖЕНИЕ.', //
+          name: '?', //
+        },
+        {
+          title: '6. Подготавливайте учеников', //
+          description: '(5 мин.) Изучение. Обсуди с изучающим, как провести изучение.', //
+          name: '?', //
+        },
+      ],
+
+      live: [ // ХРИСТИАНСКАЯ ЖИЗНЬ
+        {
+          title: '7. «Не сдавайся!»', //
+          description: '(5 мин.) Обсуждение.', //
+          name: 'Андрей П.', //
+        },
+        {
+          title: '8. Продолжайте предлагать изучение Библии', //
+          description: '(10 мин.) Обсуждение.', //
+          name: 'Евгений Л.', //
+        },
+        {
+          title: '9. Изучение Библии в собрании', //
+          description: '(30 мин.)', //
+          name: 'Василий М. / Виталий В.', //
+        },
+      ],
+      finalWords: 'Артур Ф.', // Заключительные слова
+      prayer: 'Виталий В.', // Молитва
+    },
+    dayOff: { // выходной день
+      date: 'Суббота 21 сентября', // дата
+
+      technical: { // ТЕХНИЧЕСКАЯ СЛУЖБА
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Василий М.', helper: 'Геворг Г.' }, // Аудио и видео:
+        manager: 'Алексей З.', // Распоредитель:
+        microphone: 'Гастон Н.', // Микрофоны:
+      },
+
+      publicMeeting: { // Публичная речь
+        chairman: 'Виталий В.', // Председатель:
+        prayer: 'Виталий В.', // Молитва:
         speech: '?', // Речь докладчик
         speechTitle: '?', // Речь название
       },
@@ -157,17 +332,192 @@ const store = [
         leading: 'Евгений Л.', // Ведущий:
         reading: 'Андрей П.', // Чтец:
       },
+
       prayer: 'Андрей П.', // Молитва:
     },
   },
-  //16—22 сентября
 
+  //23—29 сентября
+  {
+    weekDate: '23—29 сентября', // неделя от
+
+    weekdays: {
+      date: 'Четверг 26 сентября', // день недели
+
+      technical: {
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Геворг Г.', helper: 'Василий М.' }, // Аудио и видео:
+        manager: 'Виталий В.', // Распоредитель:
+        microphone: 'Андрей П.', // Микрофоны:
+      },
+
+      treasures: {
+        chairman: 'Евгений Л.', // Председатель:
+        prayer: 'Евгений Л..', // Молитва:
+        speechTitle: '1. Иегова — самый лучший правитель', // СОКРОВИЩА название
+        speech: 'Виталий В.', // СОКРОВИЩА докладчик
+        pearl: 'Алексей З.', // Духовные жемчужины
+        reading: 'Андрей П.', // Чтение Библии
+      },
+
+      skills: [ // ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ
+        {
+          title: '4. Начинайте разговор', //
+          description: '(3 мин.) ПРОПОВЕДЬ В ОБЩЕСТВЕННЫХ МЕСТАХ', //
+          name: '?', //
+        },
+        {
+          title: '5. Развивайте интерес', //
+          description: '(4 мин.) ПРОПОВЕДЬ ПО ДОМАМ', //
+          name: '?', //
+        },
+        {
+          title: '6. Объясняйте свои взгляды', //
+          description: '(5 мин.) Речь на основе ijwbq 181. Тема: «О чём говорится в Библии?»', //
+          name: 'Василий М.', //
+        },
+      ],
+
+      live: [ // ХРИСТИАНСКАЯ ЖИЗНЬ
+        {
+          title: '7. Почему стоит жить по нормам Иеговы', //
+          description: '(10 мин.). Обсуждение.', //
+          name: 'Алексей З.', //
+        },
+        {
+          title: '8. Местные потребности', //
+          description: '(5 мин.)', //
+          name: '-', //
+        },
+        {
+          title: '=. Изучение Библии в собрании', //
+          description: '(30 мин.) bt гл. 15, абз. 15—20', //
+          name: 'Артур Ф. / Василий М.', //
+        },
+      ],
+      finalWords: 'Евгений Л..', // Заключительные слова
+      prayer: 'Василий М.', // Молитва
+    },
+    dayOff: { // выходной день
+      date: 'Суббота 28 сентября', // дата
+
+      technical: { // ТЕХНИЧЕСКАЯ СЛУЖБА
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Геворг Г.', helper: 'Виталий В.' }, // Аудио и видео:
+        manager: 'Артур Ф..', // Распоредитель:
+        microphone: 'Андрей П.', // Микрофоны:
+      },
+
+      publicMeeting: { // Публичная речь
+        chairman: 'Василий М.', // Председатель:
+        prayer: 'Василий М.', // Молитва:
+        speech: '?', // Речь докладчик
+        speechTitle: '?', // Речь название
+      },
+
+      watchtower: { // Изучение "Сторожевой башни"
+        leading: 'Евгений Л.', // Ведущий:
+        reading: 'Алексей З.', // Чтец:
+      },
+
+      prayer: 'Алексей З.', // Молитва:
+    },
+  },
+
+  //30 СЕНТЯБРЯ — 6 ОКТЯБРЯ
+  {
+    weekDate: '30 СЕНТЯБРЯ — 6 ОКТЯБРЯ', // неделя от
+
+    weekdays: {
+      date: 'Четверг 3 октября', // день недели
+
+      technical: {
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Гастон Н.', helper: 'Виталий В.' }, // Аудио и видео:
+        manager: 'Евгений Л.', // Распоредитель:
+        microphone: 'Геворг Г.', // Микрофоны:
+      },
+
+      treasures: {
+        chairman: 'Алексей З.', // Председатель:
+        prayer: 'Алексей З.', // Молитва:
+        speechTitle: '1. Чтобы обрести вечную жизнь, полагайтесь на Иегову', // СОКРОВИЩА название
+        speech: 'Василий М.', // СОКРОВИЩА докладчик
+        pearl: 'Виталий В.', // Духовные жемчужины
+        reading: 'Геворг Г.', // Чтение Библии
+      },
+
+      skills: [ // ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ
+        {
+          title: '4. Начинайте разговор', //
+          description: '(3 мин.) НЕФОРМАЛЬНОЕ СЛУЖЕНИЕ', //
+          name: '?', //
+        },
+        {
+          title: '5. Начинайте разговор', //
+          description: '(4 мин.) НЕФОРМАЛЬНОЕ СЛУЖЕНИЕ', //
+          name: '?', //
+        },
+        {
+          title: '6. Речь', //
+          description: '(5 мин.) lmd Приложение А, пункт 5. Тема: «Вы сможете вечно жить на земле»', //
+          name: 'Александр М.', //
+        },
+      ],
+
+      live: [ // ХРИСТИАНСКАЯ ЖИЗНЬ
+        {
+          title: '7. «Цените огромное терпение Бога. Взгляд Иеговы на время»', //
+          description: '(5 мин.). Обсуждение.', //
+          name: 'Виталий В.', //
+        },
+        {
+          title: '8. «Чего достигла наша организация» (сентябрь)', //
+          description: '(10 мин.) Покажи ВИДЕО.', //
+          name: 'Алексей З.', //
+        },
+        {
+          title: '9. Изучение Библии в собрании', //
+          description: '(30 мин.) bt гл. 16, абз. 1—5, рамка на с. 128', //
+          name: 'Евгений Л. / Андрей П.', //
+        },
+      ],
+      finalWords: 'Алексей З.', // Заключительные слова
+      prayer: 'Андрей П.', // Молитва
+    },
+    dayOff: { // выходной день
+      date: 'Суббота 5 октября', // дата
+
+      technical: { // ТЕХНИЧЕСКАЯ СЛУЖБА
+        scene: 'Александр М.', // Микрофон трибуна:
+        audioVideo: { main: 'Виталий В.', helper: 'Гастон Н.' }, // Аудио и видео:
+        manager: 'Алексей З.', // Распоредитель:
+        microphone: 'Геворг Г.', // Микрофоны:
+      },
+
+      publicMeeting: { // Публичная речь
+        chairman: 'Артур Ф.', // Председатель:
+        prayer: 'Артур Ф.', // Молитва:
+        speech: '?', // Речь докладчик
+        speechTitle: '?', // Речь название
+      },
+
+      watchtower: { // Изучение "Сторожевой башни"
+        leading: 'Евгений Л.', // Ведущий:
+        reading: 'Василий М.', // Чтец:
+      },
+
+      prayer: 'Василий М.', // Молитва:
+    },
+  }
 
 
 ];
 
 
 const main = document.querySelector('main');
+let nameActive;
+let weekActiv = 0
 
 function render(weekNumber) {
   main.innerHTML = '';
@@ -325,11 +675,11 @@ function render(weekNumber) {
           <h6>Речь:</h6>
           <div>
             <p>
-              Докладчик. -
+              Докладчик-
               <span class="name" name="${storeItemInfo.dayOff.publicMeeting.speech}">${storeItemInfo.dayOff.publicMeeting.speech}</span>
             </p>
             <p>
-              Тема. -
+              Тема-
               <span class="name" name="${storeItemInfo.dayOff.publicMeeting.speechTitle}">${storeItemInfo.dayOff.publicMeeting.speechTitle}</span>
             </p>
           </div>
@@ -352,23 +702,22 @@ function render(weekNumber) {
     </div>
   `;
   main.appendChild(section);
+  spanNameActive(nameActive);
 }
 
 
 const navButtonNext = document.querySelector('.nav-buttons .next');
 const navButtonPrev = document.querySelector('.nav-buttons .prev');
 function navButtonsChengeAhow() {
-  if (weekActiv > 0) {
+  console.log(weekActiv);
+  
+  if (weekActiv > 0 && weekActiv < (store.length -1)) {
     navButtonPrev.classList.remove('button_none');
-  }
-  if (weekActiv == (store.length - 1)) {
-    navButtonNext.classList.add('button_none');
-  }
-  if (weekActiv == 0) {
-    navButtonPrev.classList.add('button_none');
-  }
-  if (weekActiv < (store.length - 1)) {
     navButtonNext.classList.remove('button_none');
+  }else if(weekActiv == 0){
+    navButtonPrev.classList.add('button_none');
+  }else if (weekActiv < store.length){
+    navButtonNext.classList.add('button_none');
   }
 }
 
@@ -389,11 +738,11 @@ function getWeekNumber(date) {
 }
 const visitWeekNumber = getWeekNumber(new Date());
 const firstWeekNumber = 36;//Номер первой недели месяца, изменять каждый месяц
-let weekActiv = 0
+
 if ((visitWeekNumber - firstWeekNumber) > -1 && (visitWeekNumber - firstWeekNumber) < store.length) {
   weekActiv = visitWeekNumber - firstWeekNumber
-  navButtonsChengeAhow()
 }
+navButtonsChengeAhow()
 render(weekActiv);
 
 
@@ -436,21 +785,30 @@ navButtonPrev.onclick = function () {
   }, 600);
 }
 
+
 const nameListLi = document.querySelectorAll('.name-list li');
 nameListLi.forEach(span => {
-  span.onclick = function(){
-    const name = span.innerText;
-  const spanNameList = document.querySelectorAll(`span[name="${name}"]`);
+  span.onclick = function () {
+    nameActive = span.innerText;
+    spanNameActive(nameActive)
 
-  const spanWithName = document.querySelectorAll('span[name]');
-  spanWithName.forEach(span => {
-    span.classList.remove('name_active')
-  })
-
-  spanNameList.forEach(span => {
-    span.classList.add('name_active')
-  });
-
-  document.querySelector('.name-list').classList.add('display_none');
+    document.querySelector('.name-list').classList.add('display_none');
   }
 })
+
+function spanNameActive(name) {  
+  setTimeout(() => {
+    const spanWithName = document.querySelectorAll('span[name]');
+  console.log(spanWithName);
+  spanWithName.forEach(span => {
+    console.log(span.innerText);
+    span.classList.remove('name_active');
+    if (span.innerText.includes(name)) {
+      
+      
+      span.classList.add('name_active')
+    }
+  })
+  }, 500);
+  
+}

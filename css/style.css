@@ -6,11 +6,27 @@
   list-style-type: none;
 }
 
+
+
+.thema_light{
+  --color1: white;
+  --color2: black;
+  --colorShadow: #00000070;
+}
+
+.thema_darck{
+  --color1: rgb(0, 0, 0);
+  --color2: rgb(255, 255, 255);
+  --colorShadow: #ffffff70;
+}
+
 body{
   padding: 0 20px;
   overflow-x: hidden;
   height: 100%;
+  background-color: var(--color1);
 }
+
 
 h1{
   text-align: center;
@@ -43,8 +59,8 @@ h3{
 }
 
 .day__title{
-  background-color: black;
-  color: white;
+  background-color: var(--color2);
+  color: var(--color1);
   padding: 4px 0;
   position: sticky;
   top: -2px;
@@ -125,7 +141,7 @@ h5.tower{
 .item{
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed var(--color2);
   align-items: end;
   padding: 10px 0 2px 0;
 }
@@ -134,9 +150,12 @@ h5.tower{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed var(--color2);
   padding: 10px 0 0 0;
   min-height: 60px;
+}
+.item_two h6{
+  min-width: 30%;
 }
 .item_two div{
   display: flex;
@@ -173,7 +192,7 @@ ul{
 }
 
 li{
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed var(--color2);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -186,11 +205,12 @@ li span{
   /* font-style: italic; */
   font-weight: 400;
   color: rgb(197, 6, 6);
+  transition: 0.5s;
 }
 
 span.name_active{
-  background-color: rgb(197, 6, 6);
-  color: white;
+  background: linear-gradient(30deg, rgb(112, 155, 247), rgb(240, 89, 243));
+  color: var(--color1);
   padding: 6px;
   border-radius: 4px;
 }
@@ -217,7 +237,9 @@ span.name_active{
   background-image: url(../img/prev.svg);
   left: 0;
 }
-
+.button_none{
+  display: none;
+}
 
 
 ._hideRight{
@@ -234,8 +256,8 @@ span.name_active{
 }
 
 .name-list{
-  background-color: white;
-  box-shadow: 0 4px 42px 0px rgba(0, 0, 0, 0.192);
+  background-color: var(--color1);
+  box-shadow: 0 4px 42px 0px var(--colorShadow);
   position: fixed;
   z-index: 300;
   top: 50%;
@@ -264,14 +286,16 @@ span.name_active{
   transition: 0.5s;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  padding: 6px;
 }
 .name-list li{
   border: none;
-  padding: 6px;
-  border: 1px solid;
+  padding: 8px 4px;
+  border: 1px solid rgba(128, 128, 128, 0);
+  box-shadow: 0 2px 4px 1px var(--colorShadow) ;
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--color1);
 }
 
 
