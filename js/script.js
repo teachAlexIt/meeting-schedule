@@ -586,7 +586,7 @@ function render(weekNumber) {
           </li>
           <li>
             <h6>3. Чтение Библии</h6>
-            <span>(10 мин.)</span>
+            <span>(4 мин.)</span>
             <span class="name" name="${storeItemInfo.weekdays.treasures.reading}">${storeItemInfo.weekdays.treasures.reading}</span>
           </li>
         </ul>
