@@ -9,6 +9,7 @@
 
 .swiper{
   overflow: visible;
+  margin-top: 20px;
 }
 .swiper-wrapper{
   overflow-x: visible;
@@ -30,11 +31,18 @@
 }
 
 body{
-  padding: 0 20px;
   overflow-x: hidden;
   height: 100%;
   background-color: var(--color1);
 }
+body::-webkit-scrollbar, .name-list ul::-webkit-scrollbar{
+  width: 6px;
+}
+body::-webkit-scrollbar-thumb, .name-list ul::-webkit-scrollbar-thumb{
+  background-color: var(--color2);
+  border-radius: 10px;
+}
+
 
 
 h1{
@@ -57,7 +65,7 @@ section{
 h3{
   font-size: 28px;
   text-align: center;
-  margin-bottom: 28px;
+  margin: 12px 0;
 }
 
 .days{
@@ -314,3 +322,49 @@ span.name_active{
 .display_none{
   display: none;
 }
+
+.loader{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  background-color: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 400;
+  transition: all 0.5s;
+}
+.loader img{
+  width: 100px;
+  animation: rotate 2.5s ease-in-out infinite ;
+}
+@keyframes rotate{
+  0%{
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+  }
+  100%{
+    transform: perspective(100px) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.loader_hide{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper{
+  max-width: 1000px;
+  margin: 20px auto 50px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0 var(--colorShadow);
+  border-radius: 20px;
+}
+.swiper-slide{
+  padding: 0 20px;
+  align-items: stretch;
+  height: auto;
+  padding-bottom: 50px;
+}
+

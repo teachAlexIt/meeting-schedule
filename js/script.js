@@ -1,165 +1,244 @@
-import store from './store.js';
+let store = [];
 
-const swiperWrapper = document.querySelector('.swiper-wrapper');
-for (let i = 0; i < store.length; i++) {
-  const storeItemInfo = store[i];
-  const section = document.createElement('section');
-  section.className = 'swiper-slide week';
+import { fetchDishesList } from "./getData.js";
 
-  section.innerHTML = `
+// Вызываем функцию fetchDishesList и обрабатываем возвращаемый Promise
+fetchDishesList()
+  .then(dishesList => {
+    // Когда Promise разрешается, мы получаем массив dishesList
+    // Выводим массив объектов блюд в консоль для проверки
+    store = dishesList;
+    render(store);
+    setTimeout(() => {
+      document.querySelector('.loader').classList.add('loader_hide');
+    }, 1000);
+  })
+  .catch(error => {
+    // Если Promise отклоняется, выводим ошибку в консоль
+    console.error('Ошибка при получении списка блюд:', error);
+  });
+//   return `
+//   <li>
+//     <h6>${skillItem.title}</h6>
+//     <span>${skillItem.description}</span>
+//     <span class="name" name="${skillItem.name}">${skillItem.name}</span>
+//   </li>
+// `;
+
+
+function skillsListHTML(storeItemInfo) {
+  const skillsNumbers = ['weekdaySkillsTitle1', 'weekdaySkillsTitle2', 'weekdaySkillsTitle3', 'weekdaySkillsTitle4'];
+  return skillsNumbers.map((item, index) => { // Возвращаем значение
+    if (item in storeItemInfo) {
+      if (storeItemInfo[item] !== '') {
+        const keyTitle = `weekdaySkillsTitle${index + 1}`;
+        const keyDescription = `weekdaySkillsDescription${index + 1}`;
+        const keyName = `weekdaySkillsName${index + 1}`;
+        
+        console.log(storeItemInfo[keyTitle], storeItemInfo[keyDescription], storeItemInfo[keyName]);
+
+        return `
+          <li>
+            <h6>${storeItemInfo[keyTitle]}</h6>
+            <span>${storeItemInfo[keyDescription]}</span>
+            <span class="name" name="${storeItemInfo[keyName]}">${storeItemInfo[keyName]}</span>
+          </li>
+        `;
+      }
+    }
+    return ''; // Если ключ отсутствует, вернём пустую строку
+  }).join(''); // Соединяем элементы массива в строку
+}
+
+
+function liveListHTML(storeItemInfo) {
+  const liveNumbers = ['weekdayLiveTitle1', 'weekdayLiveTitle2', 'weekdayLiveTitle3'];
+  return liveNumbers.map((item, index) => { // Возвращаем значение
+    if (item in storeItemInfo) {
+      if (storeItemInfo[item] !== ''){
+      const keyTitle = `weekdayLiveTitle${index + 1}`;
+      const keyDescription = `weekdayLiveDescription${index + 1}`;
+      const keyName = `weekdayLiveName${index + 1}`;
+      return `
+        <li>
+          <h6>${storeItemInfo[keyTitle]}</h6>
+          <span>${storeItemInfo[keyDescription]}</span>
+          <span class="name" name="${storeItemInfo[keyName]}">${storeItemInfo[keyName]}</span>
+        </li>
+      `;
+      }
+    }
+    return ''; // Если ключ отсутствует, вернём пустую строку
+  }).join(''); // Соединяем элементы массива в строку
+}
+
+function formatDateToDayAndMonth(dateString) {
+  try {
+    const date = new Date(dateString);
+    
+    // Опции для форматирования
+    const options = { weekday: 'long', day: 'numeric', month: 'long' };
+  
+    // Локализация в нужном языке (русский)
+    return new Intl.DateTimeFormat('ru-RU', options).format(date);
+  } catch (error) {
+    console.error('Ошибка при форматировании даты:', error);
+    return dateString; // Возвращаем исходную строку, если дата некорректна
+  }
+}
+
+
+function render(store) {
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+  for (let i = 1; i < store.length - 1; i++) {
+    const storeItemInfo = store[i];
+    console.log(storeItemInfo);
+    const section = document.createElement('section');
+    section.className = 'swiper-slide week';
+
+    section.innerHTML = `
     <h3>${storeItemInfo.weekDate}</h3>
     <div class="days">
       <div class="day">
         <div class="day__title">
-          <h4>${storeItemInfo.weekdays.date}</h4>
+          <h4>${formatDateToDayAndMonth(storeItemInfo.weekdayDate)}</h4>
           <h4>Наша христианская жизнь и служение</h4>
         </div>
 
         <h5 class="technical">ТЕХНИЧЕСКАЯ СЛУЖБА</h5>
         <div class="item">
           <h6>Микрофон трибуна:</h6>
-          <span class="name" name="${storeItemInfo.weekdays.technical.scene}">${storeItemInfo.weekdays.technical.scene}</span>
+          <span class="name" name="${storeItemInfo.weekdayScene}">${storeItemInfo.weekdayScene}</span>
         </div>
         <div class="item_two">
           <h6>Аудио и видео:</h6>
           <div>
             <p>
               Отв. -
-              <span class="name" name="${storeItemInfo.weekdays.technical.audioVideo.main}">${storeItemInfo.weekdays.technical.audioVideo.main}</span>
+              <span class="name" name="${storeItemInfo.weekdayAudioVideoMain}">${storeItemInfo.weekdayAudioVideoMain}</span>
             </p>
             <p>
               Пом. -
-              <span class="name" name="${storeItemInfo.weekdays.technical.audioVideo.helper}">${storeItemInfo.weekdays.technical.audioVideo.helper}</span>
+              <span class="name" name="${storeItemInfo.weekdayAudioVideoHelper}">${storeItemInfo.weekdayAudioVideoHelper}</span>
             </p>
           </div>
         </div>
         <div class="item">
           <h6>Распоредитель:</h6>
-          <span class="name" name="${storeItemInfo.weekdays.technical.manager}">${storeItemInfo.weekdays.technical.manager}</span>
+          <span class="name" name="${storeItemInfo.weekdayManager}">${storeItemInfo.weekdayManager}</span>
         </div>
         <div class="item">
           <h6>Микрофоны:</h6>
-          <span class="name" name="${storeItemInfo.weekdays.technical.microphone}">${storeItemInfo.weekdays.technical.microphone}</span>
+          <span class="name" name="${storeItemInfo.weekdayMicrophone}">${storeItemInfo.weekdayMicrophone}</span>
         </div>
 
         <h5 class="treasures">СОКРОВИЩА ИЗ СЛОВА БОГА</h5>
         <div class="item">
           <h6>Председатель:</h6>
-          <span class="name" name="${storeItemInfo.weekdays.treasures.chairman}">${storeItemInfo.weekdays.treasures.chairman}</span>
+          <span class="name" name="${storeItemInfo.weekdayChairman}">${storeItemInfo.weekdayChairman}</span>
         </div>
         <div class="item">
           <h6>Молитва:</h6>
-          <span class="name" name="${storeItemInfo.weekdays.treasures.prayer}">${storeItemInfo.weekdays.treasures.prayer}</span>
+          <span class="name" name="${storeItemInfo.weekdayPayer1}">${storeItemInfo.weekdayPayer1}</span>
         </div>
         <ul class="treasures-list">
           <li>
-            <h6>${storeItemInfo.weekdays.treasures.speechTitle}</h6>
+            <h6>${storeItemInfo.weekdaySpeechTitle}</h6>
             <span>(10 мин.)</span>
-            <span class="name" name="${storeItemInfo.weekdays.treasures.speech}">${storeItemInfo.weekdays.treasures.speech}</span>
+            <span class="name" name="${storeItemInfo.weekdaySpeechName}">${storeItemInfo.weekdaySpeechName}</span>
           </li>
           <li>
             <h6>2. Духовные жемчужины</h6>
             <span>(10 мин.)</span>
-            <span class="name" name="${storeItemInfo.weekdays.treasures.pearl}">${storeItemInfo.weekdays.treasures.pearl}</span>
+            <span class="name" name="${storeItemInfo.weekdayPearl}">${storeItemInfo.weekdayPearl}</span>
           </li>
           <li>
             <h6>3. Чтение Библии</h6>
             <span>(4 мин.)</span>
-            <span class="name" name="${storeItemInfo.weekdays.treasures.reading}">${storeItemInfo.weekdays.treasures.reading}</span>
+            <span class="name" name="${storeItemInfo.weekdayReadingBible}">${storeItemInfo.weekdayReadingBible}</span>
           </li>
         </ul>
 
         <h5 class="skills">ОТТАЧИВАЕМ НАВЫКИ СЛУЖЕНИЯ</h5>
         <div class="skills-list">
           <ul>
-            ${storeItemInfo.weekdays.skills.map(skillItem => {
-    return `
-                  <li>
-                    <h6>${skillItem.title}</h6>
-                    <span>${skillItem.description}</span>
-                    <span class="name" name="${skillItem.name}">${skillItem.name}</span>
-                  </li>
-                `;
-  }).join('')}
+           ${skillsListHTML(storeItemInfo)}
           </ul>
         </div>
 
         <h5 class="live">ХРИСТИАНСКАЯ ЖИЗНЬ</h5>
         <div class="live-list">
           <ul>
-            ${storeItemInfo.weekdays.live.map(liveItem => {
-    return `
-                  <li>
-                    <h6>${liveItem.title}</h6>
-                    <span>${liveItem.description}</span>
-                    <span class="name" name="${liveItem.name}">${liveItem.name}</span>
-                  </li>
-                `;
-  }).join('')}
+            ${liveListHTML(storeItemInfo)}
+            <li>
+              <h6>${storeItemInfo.weekdayLiveTitle4}</h6>
+              <span>${storeItemInfo.weekdayLiveDescription4}</span>
+              <span class="name" name="${storeItemInfo.weekdayLiveName4}">${storeItemInfo.weekdayLiveName4}</span>
+            </li>
           </ul>
         </div>
         <div class="item">
           <h6>Заключительные слова (3 мин.)</h6>
-          <span class="name" name="${storeItemInfo.weekdays.finalWords}">${storeItemInfo.weekdays.finalWords}</span>
+          <span class="name" name="${storeItemInfo.weekdayChairman}">${storeItemInfo.weekdayChairman}</span>
         </div>
         <div class="item">
           <h6>Молитва:</h6>
-          <span class="name" name="${storeItemInfo.weekdays.prayer}">${storeItemInfo.weekdays.prayer}</span>
+          <span class="name" name="${storeItemInfo.weekdayPayer2}">${storeItemInfo.weekdayPayer2}</span>
         </div>
       </div>
 
       <div class="day">
         <div class="day__title">
-          <h4>${storeItemInfo.dayOff.date}</h4>
+          <h4>${formatDateToDayAndMonth(storeItemInfo.dayOffDate)}</h4>
           <h4>Речь и Сторожевая башня</h4>
         </div>
 
         <h5 class="technical">ТЕХНИЧЕСКАЯ СЛУЖБА</h5>
         <div class="item">
           <h6>Микрофон трибуна:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.technical.scene}">${storeItemInfo.dayOff.technical.scene}</span>
+          <span class="name" name="${storeItemInfo.dayOffScene}">${storeItemInfo.dayOffScene}</span>
         </div>
         <div class="item_two">
           <h6>Аудио и видео:</h6>
           <div>
             <p>
               Отв. -
-              <span class="name" name="${storeItemInfo.dayOff.technical.audioVideo.main}">${storeItemInfo.dayOff.technical.audioVideo.main}</span>
+              <span class="name" name="${storeItemInfo.dayOffAudioVideoMain}">${storeItemInfo.dayOffAudioVideoMain}</span>
             </p>
             <p>
               Пом. -
-              <span class="name" name="${storeItemInfo.dayOff.technical.audioVideo.helper}">${storeItemInfo.dayOff.technical.audioVideo.helper}</span>
+              <span class="name" name="${storeItemInfo.dayOffAudioVideoHelper}">${storeItemInfo.dayOffAudioVideoHelper}</span>
             </p>
           </div>
         </div>
         <div class="item">
           <h6>Распоредитель:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.technical.manager}">${storeItemInfo.dayOff.technical.manager}</span>
+          <span class="name" name="${storeItemInfo.dayOffManager}">${storeItemInfo.dayOffManager}</span>
         </div>
         <div class="item">
           <h6>Микрофоны:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.technical.microphone}">${storeItemInfo.dayOff.technical.microphone}</span>
+          <span class="name" name="${storeItemInfo.dayOffMicrophone}">${storeItemInfo.dayOffMicrophone}</span>
         </div>
 
         <h5 class="speak">ПУБЛИЧНАЯ РЕЧЬ</h5>
         <div class="item">
           <h6>Председатель:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.publicMeeting.chairman}">${storeItemInfo.dayOff.publicMeeting.chairman}</span>
+          <span class="name" name="${storeItemInfo.dayOffChairman}">${storeItemInfo.dayOffChairman}</span>
         </div>
         <div class="item">
           <h6>Молитва:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.publicMeeting.prayer}">${storeItemInfo.dayOff.publicMeeting.prayer}</span>
+          <span class="name" name="${storeItemInfo.dayOffPayer1}">${storeItemInfo.dayOffPayer1}</span>
         </div>
         <div class="item_two">
           <h6>Речь:</h6>
           <div>
             <p>
               Докладчик-
-              <span class="name" name="${storeItemInfo.dayOff.publicMeeting.speech}">${storeItemInfo.dayOff.publicMeeting.speech}</span>
+              <span class="name" name="${storeItemInfo.dayOffSpeechName}">${storeItemInfo.dayOffSpeechName}</span>
             </p>
             <p>
               Тема-
-              <span class="name" name="${storeItemInfo.dayOff.publicMeeting.speechTitle}">${storeItemInfo.dayOff.publicMeeting.speechTitle}</span>
+              <span class="name" name="${storeItemInfo.dayOffSpeechTitle}">${storeItemInfo.dayOffSpeechTitle}</span>
             </p>
           </div>
         </div>
@@ -167,21 +246,23 @@ for (let i = 0; i < store.length; i++) {
         <h5 class="tower">СТОРОЖЕВАЯ БАШНЯ</h5>
         <div class="item">
           <h6>Ведущий:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.watchtower.leading}">${storeItemInfo.dayOff.watchtower.leading}</span>
+          <span class="name" name="${storeItemInfo.dayOffLeadingName}">${storeItemInfo.dayOffLeadingName}</span>
         </div>
         <div class="item">
           <h6>Чтец:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.watchtower.reading}">${storeItemInfo.dayOff.watchtower.reading}</span>
+          <span class="name" name="${storeItemInfo.dayOffReadingName}">${storeItemInfo.dayOffReadingName}</span>
         </div>
         <div class="item">
           <h6>Молитва:</h6>
-          <span class="name" name="${storeItemInfo.dayOff.prayer}">${storeItemInfo.dayOff.prayer}</span>
+          <span class="name" name="${storeItemInfo.dayOffPayer2}">${storeItemInfo.dayOffPayer2}</span>
         </div>
       </div>
     </div>
   `;
-  swiperWrapper.appendChild(section);
+    swiperWrapper.appendChild(section);
+  }
 }
+
 
 
 
@@ -198,13 +279,13 @@ function getWeekNumber(date) {
   return weekNumber;
 }
 const visitWeekNumber = getWeekNumber(new Date());
-const firstWeekNumber = 41;//Номер первой недели месяца, изменять каждый месяц
+const firstWeekNumber = 48;//Номер первой недели месяца, изменять каждый месяц
 console.log(visitWeekNumber - firstWeekNumber);
 
 
 
 const nameListLi = document.querySelectorAll('.name-list li');
-nameListLi.forEach(span => {  
+nameListLi.forEach(span => {
   span.onclick = function () {
     spanNameActive(span.innerText)
 
@@ -212,17 +293,17 @@ nameListLi.forEach(span => {
   }
 })
 
-function spanNameActive(name) {  
+function spanNameActive(name) {
   setTimeout(() => {
     const spanWithName = document.querySelectorAll('span[name]');
-  spanWithName.forEach(span => {
-    span.classList.remove('name_active');
-    if (span.innerText.includes(name)) {
-      span.classList.add('name_active')
-    }
-  })
+    spanWithName.forEach(span => {
+      span.classList.remove('name_active');
+      if (span.innerText.includes(name)) {
+        span.classList.add('name_active')
+      }
+    })
   }, 500);
-  
+
 }
 
 
