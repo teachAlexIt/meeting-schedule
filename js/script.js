@@ -173,7 +173,7 @@ function render(store) {
             <li>
               <h6>${storeItemInfo.weekdayLiveTitle4}</h6>
               <span>${storeItemInfo.weekdayLiveDescription4}</span>
-              <span class="name" name="${storeItemInfo.weekdayLiveName4}">${storeItemInfo.weekdayLiveName4}</span>
+              <span class="name" name="${storeItemInfo.weekdayLiveName4} / ${storeItemInfo.weekdayLiveReadingName4}">${storeItemInfo.weekdayLiveName4} / ${storeItemInfo.weekdayLiveReadingName4}</span>
             </li>
           </ul>
         </div>
