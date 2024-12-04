@@ -217,13 +217,15 @@ li{
 }
 li span{
   padding-left: 18px;
+  color: #666666;
 }
 
 .name{
   /* font-style: italic; */
   font-weight: 400;
-  color: rgb(197, 6, 6);
+  color: rgb(0, 0, 0);
   transition: 0.5s;
+  font-weight: 400;
 }
 
 span.name_active{
@@ -367,3 +369,19 @@ span.name_active{
   padding-bottom: 50px;
 }
 
+
+
+
+
+
+.treasures-list h6{
+  color: #2A6B77;
+}
+
+.skills-list h6{
+  color: #D68F00;
+}
+
+.live-list h6{
+  color: #C10000;
+}
