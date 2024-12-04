@@ -1,7 +1,7 @@
 // Функция fetchDishesList выполняет HTTP-запрос для получения данных о блюдах
 export function fetchDishesList() {
   // Выполняем fetch-запрос к указанному URL
-  return fetch('https://script.google.com/macros/s/AKfycbzQqiMdV06NLeA40F__LOEHYqjkZF9St2BxdXsH_hIvevBAQtRT3GB3zTbIJXh_8mmolA/exec')
+  return fetch('https://script.google.com/macros/s/AKfycbzOYjulydRI-I-JKUeiGiyQOfkoMo--EGzINgEHNyCDzWtxYV0yJvvRmoHHMDB4iSzp/exec')
     .then(response => {
       // Проверяем, успешен ли ответ
       if (!response.ok) {

@@ -8,6 +8,7 @@ fetchDishesList()
     // Когда Promise разрешается, мы получаем массив dishesList
     // Выводим массив объектов блюд в консоль для проверки
     store = dishesList;
+    console.log(store);
     render(store);
     setTimeout(() => {
       document.querySelector('.loader').classList.add('loader_hide');
@@ -34,9 +35,6 @@ function skillsListHTML(storeItemInfo) {
         const keyTitle = `weekdaySkillsTitle${index + 1}`;
         const keyDescription = `weekdaySkillsDescription${index + 1}`;
         const keyName = `weekdaySkillsName${index + 1}`;
-        
-        console.log(storeItemInfo[keyTitle], storeItemInfo[keyDescription], storeItemInfo[keyName]);
-
         return `
           <li>
             <h6>${storeItemInfo[keyTitle]}</h6>
@@ -92,7 +90,6 @@ function render(store) {
   const swiperWrapper = document.querySelector('.swiper-wrapper');
   for (let i = 1; i < store.length - 1; i++) {
     const storeItemInfo = store[i];
-    console.log(storeItemInfo);
     const section = document.createElement('section');
     section.className = 'swiper-slide week';
 
@@ -280,9 +277,6 @@ function getWeekNumber(date) {
 }
 const visitWeekNumber = getWeekNumber(new Date());
 const firstWeekNumber = 48;//Номер первой недели месяца, изменять каждый месяц
-console.log(visitWeekNumber - firstWeekNumber);
-
-
 
 const nameListLi = document.querySelectorAll('.name-list li');
 nameListLi.forEach(span => {
