@@ -223,7 +223,11 @@ li span{
 .name{
   /* font-style: italic; */
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  background-color: rgb(70, 70, 70);
+  color: #fff;
+  padding: 8px;
+  max-width: max-content;
+  border-radius: 8px;
   transition: 0.5s;
   font-weight: 400;
 }
