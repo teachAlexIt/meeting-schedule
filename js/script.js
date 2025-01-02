@@ -72,11 +72,13 @@ function liveListHTML(storeItemInfo) {
 
 function formatDateToDayAndMonth(dateString) {
   try {
-    const date = new Date(dateString);
+    console.log(dateString);
     
+    const date = new Date(dateString);
+    console.log(date);
     // Опции для форматирования
     const options = { weekday: 'long', day: 'numeric', month: 'long' };
-  
+    console.log(options);
     // Локализация в нужном языке (русский)
     return new Intl.DateTimeFormat('ru-RU', options).format(date);
   } catch (error) {
@@ -276,7 +278,7 @@ function getWeekNumber(date) {
   return weekNumber;
 }
 const visitWeekNumber = getWeekNumber(new Date());
-const firstWeekNumber = 48;//Номер первой недели месяца, изменять каждый месяц
+const firstWeekNumber = 1;//Номер первой недели месяца, изменять каждый месяц
 
 const nameListLi = document.querySelectorAll('.name-list li');
 nameListLi.forEach(span => {
@@ -300,6 +302,7 @@ function spanNameActive(name) {
 
 }
 
+console.log(visitWeekNumber,firstWeekNumber, visitWeekNumber - firstWeekNumber);
 
 
 const swiper = new Swiper('.swiper', {
