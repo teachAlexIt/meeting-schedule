@@ -1,0 +1,20 @@
+{
+  "name": "График встреч. Январь 2025",
+  "short_name": "График встреч. Январь 2025",
+  "start_url": "https://teachalexit.github.io/meeting-schedule/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "./img/treasures.png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "./img/treasures.png"
+    }
+  ]
+}
